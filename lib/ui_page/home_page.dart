@@ -1,41 +1,56 @@
 import 'package:flutter/material.dart';
-import 'package:netflix/app_constaint.dart';
+import 'package:netflix/main.dart';
+import 'package:netflix/theme_provider.dart';
+import 'package:netflix/ui_helper/app_constaint.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget
 {
+  bool isDark=false;
   @override
   Widget build(BuildContext context)
   {
-  return Scaffold(backgroundColor: Color(0xff505352),
+    isDark = Theme.of(context).brightness==Brightness.dark;
+  return Scaffold(backgroundColor:isDark?Colors.white: Color(0xff505352),
+    appBar: AppBar(
+      backgroundColor: isDark?Colors.white: Color(0xff505352),
+      leading: Image.asset('assets/icon/logo.png',height: 70,),
+      actions: [
+        Row(
+          children: [
+            Switch.adaptive(
+                value: context.watch<ThemeProvider>().getThemeValue(),
+                onChanged: (value)
+            {
+              context.read<ThemeProvider>().changeThemeValue(value);
+
+            }),
+            SizedBox(width: 20,),
+            Icon(Icons.download,size: 40,color: isDark?Colors.black: Colors.white),
+            SizedBox(width: 20,),
+            Icon(Icons.search,size: 40,color: isDark?Colors.black: Colors.white,),
+          ],),
+      ],
+    ),
            body:
            SingleChildScrollView(
              child: Container(padding: EdgeInsets.all(20),
                width: double.infinity,
              child: Column(
                children: [
-                 Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                   children: [
-                    Image.asset('assets/icon/logo.png',height: 70,),
-                    Row(
-                      children: [
-                      Icon(Icons.download,size: 40,color: Color(0xffEBEBEB),),
-                      Icon(Icons.search,size: 40,color: Color(0xffEBEBEB),),
-                    ],),
-                   ],
-                 ),
                  Row(
                    children: [
                    Container(height: 40,width: 100,
-                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),border: Border.all(color:Colors.white)),
-                       child: TextButton(onPressed: (){}, child: Text('TV Shows',style: myfont16()))),
+                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),border: Border.all(width: 1,color: isDark?Colors.black: Colors.white)),
+                       child: TextButton(onPressed: (){}, child: Text('TV Shows',style: TextStyle(color: isDark?Colors.black: Colors.white),))),
                    SizedBox(width: 10,),
                    Container(height: 40,width: 100,
-                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),border: Border.all(color: Colors.white)),
-                       child: TextButton(onPressed: (){}, child: Text('Movies',style:myfont16(),))),
+                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),border: Border.all(color: isDark?Colors.black: Colors.white,width: 1)),
+                       child: TextButton(onPressed: (){}, child: Text('Movies',style: TextStyle(color: isDark?Colors.black: Colors.white),))),
                    SizedBox(width: 10,),
                    Container(height: 40,width: 150,
-                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),border: Border.all(color: Colors.white)),
-                       child: TextButton(onPressed: (){}, child: Text('Categories',style:myfont16(),))),
+                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),border: Border.all(color: isDark?Colors.black: Colors.white,width: 1)),
+                       child: TextButton(onPressed: (){}, child: Text('Categories',style: TextStyle(color: isDark?Colors.black: Colors.white),))),
                  ],),
                  SizedBox(height: 20,),
                  Stack(//alignment: Alignment.bottomCenter,
@@ -51,7 +66,7 @@ class HomePage extends StatelessWidget
                          children: [
                            Container(height: 50,width: 160,
                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
-                               color: Color(0xffFFFFFF),
+                               color: isDark?Colors.black: Colors.white,
                              ),
                            child: Row(mainAxisAlignment: MainAxisAlignment.center,
                              children: [
@@ -80,7 +95,7 @@ class HomePage extends StatelessWidget
                 /// Top Pcks
                 Row(
                   children: [
-                    Text('Today"s" Top Picks for You',style: myfont25(),),
+                    Text('Today"s" Top Picks for You',style: TextStyle(color: isDark?Colors.black: Colors.white,fontSize: 20),),
                   ],
                 ),
                  Container(height: 200,width: double.infinity,
@@ -99,7 +114,7 @@ class HomePage extends StatelessWidget
                  ),
                  Row(
                    children: [
-                     Text('Continue Watching for You',style: myfont25(),)],),
+                     Text('Continue Watching for You',style: TextStyle(color: isDark?Colors.black: Colors.white,fontSize: 20),)],),
                  /// Continue
                  Stack(
                    children: [
@@ -122,9 +137,9 @@ class HomePage extends StatelessWidget
                  ),
                 Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                  Text('Mobile Games',style: myfont25(),),
+                  Text('Mobile Games',style: TextStyle(color: isDark?Colors.black: Colors.white,fontSize: 20),),
                     Container(height: 30,width: 150,
-                    child: TextButton(onPressed: (){}, child:Text('My List  >',style: myfont25(),)),),
+                    child: TextButton(onPressed: (){}, child:Text('My List  >',style: TextStyle(color: isDark?Colors.black: Colors.white,fontSize: 20),)),),
                 ],),
                 Container(height: 100,width: double.infinity,
                   child: ListView.builder(itemCount: Photos.pic.length,
@@ -143,7 +158,7 @@ class HomePage extends StatelessWidget
                  /// Download
                  Row(
                    children: [
-                     Text('Downloads For You',style: myfont25(),),
+                     Text('Downloads For You',style: TextStyle(color: isDark?Colors.black: Colors.white,fontSize: 20),),
                    ],
                  ),
                  Stack(
@@ -168,7 +183,7 @@ class HomePage extends StatelessWidget
                  /// New on Netflix
                  Row(
                    children: [
-                   Text('New on Netflix',style: myfont25(),)],),
+                   Text('New on Netflix',style: TextStyle(color: isDark?Colors.black: Colors.white,fontSize: 20),)],),
                  Container(height: 200,width: double.infinity,
                    child: ListView.builder(itemCount: Photos.pic.length,
                      scrollDirection: Axis.horizontal,
@@ -186,7 +201,7 @@ class HomePage extends StatelessWidget
                  /// Top 10
                  Row(
                    children: [
-                     Text('Top 10 Movies in Inidian Today ',style: myfont25(),),
+                     Text('Top 10 Movies in Indian Today ',style: TextStyle(color: isDark?Colors.black: Colors.white,fontSize: 20),),
                    ],
                  ),
                  Container(height: 250,width: double.infinity,
@@ -205,7 +220,7 @@ class HomePage extends StatelessWidget
                  /// only on netflix
                  Row(
                    children: [
-                     Text('Only on Netflix',style: myfont25(),),
+                     Text('Only on Netflix',style: TextStyle(color: isDark?Colors.black: Colors.white,fontSize: 20),),
                    ],
                  ),
                  Container(height: 350,width: double.infinity,
@@ -224,7 +239,7 @@ class HomePage extends StatelessWidget
                  /// Us Tv
                  Row(
                    children: [
-                     Text('Us TV Shows ',style: myfont25(),),
+                     Text('Us TV Shows ',style: TextStyle(color: isDark?Colors.black: Colors.white,fontSize: 20),),
                    ],
                  ),
                  Container(height: 200,width: double.infinity,
@@ -243,7 +258,7 @@ class HomePage extends StatelessWidget
                  ///Action
                  Row(
                    children: [
-                     Text('Action Movies ',style: myfont25(),),
+                     Text('Action Movies ',style: TextStyle(color: isDark?Colors.black: Colors.white,fontSize: 20),),
                    ],
                  ),
                  Container(height: 200,width: double.infinity,
@@ -262,7 +277,7 @@ class HomePage extends StatelessWidget
                  /// children
                  Row(
                    children: [
-                     Text('Children & Family TV ',style: myfont25(),),
+                     Text('Children & Family TV ',style: TextStyle(color: isDark?Colors.black: Colors.white,fontSize: 20),),
                    ],
                  ),
                  Container(height: 200,width: double.infinity,
@@ -281,7 +296,7 @@ class HomePage extends StatelessWidget
                  /// Critically
                  Row(
                    children: [
-                     Text('Critically Acclaimed TV Shows ',style: myfont25(),),
+                     Text('Critically Acclaimed TV Shows ',style: TextStyle(color: isDark?Colors.black: Colors.white,fontSize: 20),),
                    ],
                  ),
                  Container(height: 200,width: double.infinity,
@@ -300,7 +315,7 @@ class HomePage extends StatelessWidget
                  /// Indian
                  Row(
                    children: [
-                     Text('Indian Movies ',style: myfont25(),),
+                     Text('Indian Movies ',style: TextStyle(color: isDark?Colors.black: Colors.white,fontSize: 20),),
                    ],
                  ),
                  Container(height: 200,width: double.infinity,
@@ -319,7 +334,7 @@ class HomePage extends StatelessWidget
                  /// True
                  Row(
                    children: [
-                     Text('True Crime ',style: myfont25(),),
+                     Text('True Crime ',style: TextStyle(color: isDark?Colors.black: Colors.white,fontSize: 20),),
                    ],
                  ),
                  Container(height: 200,width: double.infinity,
@@ -338,7 +353,7 @@ class HomePage extends StatelessWidget
                  /// Top 10 TV Shows
                  Row(
                    children: [
-                     Text('Top 10 TV Shows in India Today ',style: myfont25(),),
+                     Text('Top 10 TV Shows in India Today ',style: TextStyle(color: isDark?Colors.black: Colors.white,fontSize: 20),),
                    ],
                  ),
                  Container(height: 200,width: double.infinity,
@@ -357,7 +372,7 @@ class HomePage extends StatelessWidget
                  /// Action & Adventure
                  Row(
                    children: [
-                     Text('Action & Adventure Movies ',style: myfont25(),),
+                     Text('Action & Adventure Movies ',style: TextStyle(color: isDark?Colors.black: Colors.white,fontSize: 20),),
                    ],
                  ),
                  Container(height: 200,width: double.infinity,
@@ -376,7 +391,7 @@ class HomePage extends StatelessWidget
                  /// Binge-Worthy
                  Row(
                    children: [
-                     Text('Binge-worthy Revenge TV Shows ',style: myfont25(),),
+                     Text('Binge-worthy Revenge TV Shows ',style: TextStyle(color: isDark?Colors.black: Colors.white,fontSize: 20),),
                    ],
                  ),
                  Container(height: 200,width: double.infinity,
@@ -395,7 +410,7 @@ class HomePage extends StatelessWidget
                  /// Emotional
                  Row(
                    children: [
-                     Text('Emotional Indian Movies ',style: myfont25(),),
+                     Text('Emotional Indian Movies ',style: TextStyle(color: isDark?Colors.black: Colors.white,fontSize: 20),),
                    ],
                  ),
                  Container(height: 200,width: double.infinity,
@@ -414,7 +429,7 @@ class HomePage extends StatelessWidget
                  /// Romantic
                  Row(
                    children: [
-                     Text('Romantic TV Shows ',style: myfont25(),),
+                     Text('Romantic TV Shows ',style: TextStyle(color: isDark?Colors.black: Colors.white,fontSize: 20),),
                    ],
                  ),
                  Container(height: 200,width: double.infinity,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netflix/app_constaint.dart';
+import 'package:netflix/ui_helper/app_constaint.dart';
 
 class MoviesPage extends StatelessWidget
 {
@@ -7,6 +7,17 @@ class MoviesPage extends StatelessWidget
   Widget build(BuildContext context) {
        return Scaffold
          (backgroundColor: Colors.black,
+           appBar: AppBar(
+             backgroundColor: Colors.black,
+             leading: Icon(Icons.arrow_back,color: Colors.white,size: 40,),
+             actions: [
+               Row(
+                 children: [
+                   Icon(Icons.download,size: 40,color: Color(0xffEBEBEB),),
+                   Icon(Icons.search,size: 40,color: Color(0xffEBEBEB),),
+                 ],),
+             ],
+           ),
          body:SingleChildScrollView(
            child: Column(
              children: [
@@ -14,18 +25,6 @@ class MoviesPage extends StatelessWidget
                  child:
                  Column(
                    children: [
-                   Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                   children: [
-                     Row(
-                 children: [
-                       Icon(Icons.arrow_back,size: 40,color: Colors.white,),
-                   ],),
-                          Row(children: [
-               Icon(Icons.download,size: 40,color: Colors.white,),
-               SizedBox(width: 10,),
-               Icon(Icons.search,size: 40,color: Colors.white,),
-                          ],)
-                   ],),
                      Container(width: double.infinity,height: 200,
                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/image/takla.png'),fit: BoxFit.fill),
                            border: Border(bottom: BorderSide(width: 2,color: Colors.red))

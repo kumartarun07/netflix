@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:netflix/app_constaint.dart';
+import 'package:netflix/ui_helper/app_constaint.dart';
 
 class DetailPage extends StatelessWidget
 {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(backgroundColor: Color(0xff505352),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20.0),
+            child: Icon(Icons.dangerous,size: 40,color: Colors.white,),
+          )
+        ],
+      ),
       backgroundColor: Color(0xff505352),
       body:
         ListView.builder(itemCount: Movies.mdata.length,
