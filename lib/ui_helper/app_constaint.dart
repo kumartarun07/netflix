@@ -4,38 +4,38 @@ import 'package:flutter/material.dart';
 
 TextStyle myfont25()
 {
-  return TextStyle(fontSize: 25,fontWeight: FontWeight.bold, color: Colors.white);
+  return TextStyle(fontSize: 25,fontWeight: FontWeight.bold,);
 }
 
 TextStyle myfont20()
 {
-  return TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 20);
+  return TextStyle(fontWeight: FontWeight.bold,fontSize: 20);
 }
 
 TextStyle myfont16()
 {
-  return TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Colors.white);
+  return TextStyle(fontSize: 16,fontWeight: FontWeight.bold,);
 }
 
 TextStyle myfont12()
 {
-  return TextStyle(fontSize: 12,fontWeight: FontWeight.bold,color: Colors.white);
+  return TextStyle(fontSize: 12,fontWeight: FontWeight.bold,);
 }
 
 TextStyle myfont30()
 {
-  return TextStyle(fontSize: 30,fontWeight: FontWeight.bold, color: Colors.white);
+  return TextStyle(fontSize: 30,fontWeight: FontWeight.bold,);
 }
 
 TextStyle myfont35()
 {
-  return TextStyle(fontSize: 35,fontWeight: FontWeight.bold, color: Colors.white);
+  return TextStyle(fontSize: 35,fontWeight: FontWeight.bold,);
 }
 
 
 TextStyle myfont40()
 {
-  return TextStyle(fontSize: 40,fontWeight: FontWeight.bold, color: Colors.white);
+  return TextStyle(fontSize: 40,fontWeight: FontWeight.bold,);
 }
 
 

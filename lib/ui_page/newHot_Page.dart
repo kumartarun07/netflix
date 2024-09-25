@@ -5,18 +5,18 @@ class NewhotPage extends StatelessWidget
 {
   @override
   Widget build(BuildContext context) {
-   return Scaffold(backgroundColor: Colors.black,
+   return Scaffold(
      appBar: AppBar(
-       backgroundColor: Colors.black,
+
        leadingWidth: 300,
        leading:  Padding(
          padding: const EdgeInsets.only(top: 15.0,left: 15),
-         child: Text('New & Hot',style: myfont25(),),
+         child: Text('New & Hot',style: TextStyle(fontSize: 25),),
        ),
        actions: [
-         Icon(Icons.download,size: 40,color: Color(0xffEBEBEB),),
+         Icon(Icons.download,size: 40,),
          SizedBox(width: 30,),
-         Icon(Icons.search,size: 40,color: Color(0xffEBEBEB),),
+         Icon(Icons.search,size: 40,),
        ],
      ),
      body: SingleChildScrollView(
@@ -28,7 +28,7 @@ class NewhotPage extends StatelessWidget
                children: [
                  Container(width: 100,height: 30,
                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(25),
-                     border: Border.all(color: Colors.white,)),
+                     border: Border.all(color: Colors.black,width: 1)),
                  child:Row(mainAxisAlignment: MainAxisAlignment.center,
                    children: [
                    Text('Comming soon',style: myfont12(),)
@@ -37,7 +37,7 @@ class NewhotPage extends StatelessWidget
                  SizedBox(width: 10,),
                  Container(width: 130,height: 30,
                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(25),
-                       border: Border.all(color: Colors.white,)),
+                       border: Border.all(color: Colors.black,width: 1)),
                    child:Row(mainAxisAlignment: MainAxisAlignment.center,
                      children: [
                        Text("Everyone's'Watching",style: myfont12(),)
@@ -46,7 +46,7 @@ class NewhotPage extends StatelessWidget
                  SizedBox(width: 10,),
                  Container(width: 80,height: 30,
                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(25),
-                       border: Border.all(color: Colors.white,)),
+                       border: Border.all(color: Colors.black,width: 1)),
                    child:Row(mainAxisAlignment: MainAxisAlignment.center,
                      children: [
                        Text('Gemes',style: myfont12(),)
@@ -83,14 +83,14 @@ class NewhotPage extends StatelessWidget
                        children: [
                        Column(
                          children: [
-                           Icon(Icons.notifications,size: 40,color: Colors.white,),
+                           Icon(Icons.notifications,size: 40,),
                          Text('Remaind Me',style: myfont16(),),
                          ],
                        ),
                      SizedBox(width: 30,),
                        Column(
                          children: [
-                           Icon(Icons.info,size: 40,color: Colors.white,),
+                           Icon(Icons.info,size: 40,),
                         Text('info',style: myfont20(),)
                          ],
                        ),
@@ -108,11 +108,11 @@ class NewhotPage extends StatelessWidget
                      Row(
                        children: [
                        Text('suspenceful',style: myfont12(),),
-                       Icon(Icons.circle,size: 10,color: Colors.white,),
+                       Icon(Icons.circle,size: 10,),
                        Text('Romantic',style: myfont12(),),
-                         Icon(Icons.circle,size: 10,color: Colors.white,),
+                         Icon(Icons.circle,size: 10,),
                        Text('Thirller',style: myfont12()),
-                         Icon(Icons.circle,size: 10,color: Colors.white,),
+                         Icon(Icons.circle,size: 10,),
                        Text('Love&obsesion',style: myfont12()),
                      ],)
                  ],),
@@ -130,7 +130,7 @@ class NewhotPage extends StatelessWidget
                    SizedBox(width: 10,),
                    Stack(children:[
                    Image.asset('assets/image/berlin.jpg',width: 320,fit: BoxFit.cover,),
-                   Icon(Icons.play_circle,color:Colors.white70,size: 50,)]),
+                   Icon(Icons.play_circle,size: 50,)]),
                  ],),
                Padding(
                  padding: const EdgeInsets.only(left: 20.0),
@@ -148,14 +148,14 @@ class NewhotPage extends StatelessWidget
                        children: [
                          Column(
                            children: [
-                             Icon(Icons.notifications,size: 40,color: Colors.white,),
-                             Text('Remaind Me',style: myfont16(),),
+                             Icon(Icons.notifications,size: 40,),
+                             Text('Remind Me',style: myfont16(),),
                            ],
                          ),
                          SizedBox(width: 30,),
                          Column(
                            children: [
-                             Icon(Icons.info,size: 40,color: Colors.white,),
+                             Icon(Icons.info,size: 40,),
                              Text('info',style: myfont20(),)
                            ],
                          ),
@@ -173,13 +173,13 @@ class NewhotPage extends StatelessWidget
                      Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                        children: [
                          Text('suspenceful',style: myfont12(),),
-                         Icon(Icons.circle,size: 10,color: Colors.white,),
+                         Icon(Icons.circle,size: 10,),
                          Text('Romantic',style: myfont12(),),
-                         Icon(Icons.circle,size: 10,color: Colors.white,),
+                         Icon(Icons.circle,size: 10,),
                          Text('Thirller',style: myfont12()),
-                         Icon(Icons.circle,size: 10,color: Colors.white,),
+                         Icon(Icons.circle,size: 10,),
                          Text('Love&obsesion',style: myfont12()),
-                         Icon(Icons.circle,size: 10,color: Colors.white,),
+                         Icon(Icons.circle,size: 10,),
                          Text('Movie',style: myfont12()),
                        ],)
                    ],),

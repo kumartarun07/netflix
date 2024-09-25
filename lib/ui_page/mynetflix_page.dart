@@ -14,7 +14,7 @@ class MynetflixPage extends StatelessWidget
          leadingWidth: 200,
          leading:   Padding(
            padding: const EdgeInsets.only(top: 15.0,left: 15),
-           child: Text('My Netflix',style: TextStyle(fontSize: 25,color: isDark?Colors.black:Colors.white)),
+           child: Text('My Netflix',style: myfont25()),
          ),
        actions: [
          Icon(Icons.search,size: 40,),
@@ -36,7 +36,7 @@ class MynetflixPage extends StatelessWidget
                    image: DecorationImage(image: AssetImage('assets/image/emoji.jpg'))
                    ),
                    ),
-                   Text('Name V',style: TextStyle(fontSize: 25,color: isDark?Colors.white:Colors.black),),
+                   Text('Name V',style:myfont25()),
        
                  ],
                )
@@ -48,12 +48,12 @@ class MynetflixPage extends StatelessWidget
                children: [
                  Row(
                    children: [
-                     Icon(Icons.circle_notifications_sharp,size: 50,color: isDark?Colors.black:Colors.white),
+                     Icon(Icons.circle_notifications_sharp,size: 50,),
                      SizedBox(width: 10,),
-                     Text('Notification',style: TextStyle(fontSize: 25,color: isDark?Colors.black:Colors.white),),
+                     Text('Notification',style: myfont25(),),
                    ],
                  ),
-                 Icon(Icons.arrow_forward_ios_rounded,size: 30,color: isDark?Colors.black:Colors.white)
+                 Icon(Icons.arrow_forward_ios_rounded,size: 30,)
                ],),
              Row(
                children: [
@@ -67,11 +67,11 @@ class MynetflixPage extends StatelessWidget
                  Column(
                    crossAxisAlignment: CrossAxisAlignment.start,
                    children: [
-                   Text('Suggestions for Tonight',style: TextStyle(fontSize: 12,color: isDark?Colors.black:Colors.white),),
+                   Text('Suggestions for Tonight',style: myfont12()),
                    SizedBox(height: 10,),
-                   Text('Explore personalised picks.',style: TextStyle(fontSize: 12,color: isDark?Colors.black:Colors.white),),
+                   Text('Explore personalised picks.',style: myfont12()),
                      SizedBox(height: 10,),
-                   Text('13 July',style: TextStyle(fontSize:12,color: isDark?Colors.black:Colors.white)),
+                   Text('13 July',style: myfont12()),
                  ],)
                ],),
                  SizedBox(height: 10,),
@@ -89,11 +89,11 @@ class MynetflixPage extends StatelessWidget
                      Column(
                        crossAxisAlignment: CrossAxisAlignment.start,
                        children: [
-                         Text('Your lateset top picks',style: TextStyle(fontSize: 12,color: isDark?Colors.black:Colors.white)),
+                         Text('Your lateset top picks',style: myfont12()),
                          SizedBox(height: 10,),
-                         Text('Find a new favourite.',style: TextStyle(fontSize: 12,color: isDark?Colors.black:Colors.white)),
+                         Text('Find a new favourite.',style:myfont12()),
                          SizedBox(height: 10,),
-                         Text('10 July',style: TextStyle(fontSize: 12,color: isDark?Colors.black:Colors.white)),
+                         Text('10 July',style: myfont12()),
                        ],)
                    ],),
                  SizedBox(height: 10,),
@@ -105,19 +105,19 @@ class MynetflixPage extends StatelessWidget
              children: [
                Row(
                  children: [
-                   Icon(Icons.download_for_offline,size: 50,color: isDark?Colors.black:Colors.white),
+                   Icon(Icons.download_for_offline,size: 50,),
                    SizedBox(width: 10,),
-                   Text('Download',style: TextStyle(fontSize: 25,color: isDark?Colors.black:Colors.white)),
+                   Text('Download',style:myfont25()),
                  ],
                ),
-               Icon(Icons.arrow_forward_ios_rounded,size: 30,color: isDark?Colors.black:Colors.white)
+               Icon(Icons.arrow_forward_ios_rounded,size: 30,)
               
                
              ],),
            SizedBox(height: 20,),
            Row(
              children: [
-               Text('TV Shows & Movies You Have Liked ',style: TextStyle(fontSize: 20,color: isDark?Colors.black:Colors.white)),
+               Text('TV Shows & Movies You Have Liked ',style: myfont20()),
              ],
            ),
            SizedBox(height: 10,),

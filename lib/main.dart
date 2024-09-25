@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget
       home: NetflixBottomPage(),
       theme: ThemeData(
         brightness:Brightness.light,
-        colorScheme:ColorScheme.fromSeed(seedColor: Colors.blue),      ),
+        colorScheme:ColorScheme.fromSeed(seedColor: Colors.white),      ),
        darkTheme: ThemeData(brightness: Brightness.dark),
        themeMode: context.watch<ThemeProvider>().getThemeValue() ? ThemeMode.dark:ThemeMode.light,
     );

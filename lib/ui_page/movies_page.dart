@@ -6,15 +6,14 @@ class MoviesPage extends StatelessWidget
   @override
   Widget build(BuildContext context) {
        return Scaffold
-         (backgroundColor: Colors.black,
+         (
            appBar: AppBar(
-             backgroundColor: Colors.black,
-             leading: Icon(Icons.arrow_back,color: Colors.white,size: 40,),
+             leading: Icon(Icons.arrow_back,size: 40,),
              actions: [
                Row(
                  children: [
-                   Icon(Icons.download,size: 40,color: Color(0xffEBEBEB),),
-                   Icon(Icons.search,size: 40,color: Color(0xffEBEBEB),),
+                   Icon(Icons.download,size: 40,),
+                   Icon(Icons.search,size: 40,/*color: Color(0xffEBEBEB),*/),
                  ],),
              ],
            ),
@@ -39,7 +38,7 @@ class MoviesPage extends StatelessWidget
                          SizedBox(width: 15,),
                          Text('2h 14m',style: myfont16(),),
                          SizedBox(width: 15,),
-                         Icon(Icons.hd_outlined,size: 30,color: Colors.white,),
+                         Icon(Icons.hd_outlined,size: 30,),
                        ],
                      ),
                  ],),
@@ -60,44 +59,46 @@ class MoviesPage extends StatelessWidget
                      Text('# 3 in Movies Today',style: myfont16(),)
                    ],),
                    SizedBox(height: 10,),
-                   Container(height: 40,width: double.infinity,color: Colors.white,
+                   Container(height: 40,width: double.infinity,
+                     color: Colors.white,
                      child:
                      Row(mainAxisAlignment: MainAxisAlignment.center,
                        children: [
                          Icon(Icons.play_arrow,size: 30,color: Colors.black,),
-                         Text('Play',style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),)
+                         Text('Play',style: TextStyle(fontSize: 20,color: Colors.black))
                        ],),
                    ),
                    SizedBox(height: 10,),
-                   Container(height: 40,width: double.infinity,color: Colors.grey,
+                   Container(height: 40,width: double.infinity,
+                     color: Colors.black38,
                      child:
                      Row(mainAxisAlignment: MainAxisAlignment.center,
                        children: [
-                         Icon(Icons.download,size: 30,color: Colors.black,),
-                         Text('Download',style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),)
+                         Icon(Icons.download,size: 30,),
+                         Text('Download',style:myfont20())
                        ],),
                    ),
                    SizedBox(height: 10,),
                    Text('Rajkumar Rao stars as industriallist Srikanth Bolla in This '
                        'inspirational biopic that follows his path from childhood poverty to soaring success',
-                     style: TextStyle(fontSize: 12,color: Colors.white),textAlign:TextAlign.start,),
+                     style: myfont12(),textAlign:TextAlign.start,),
                    SizedBox(height: 10,),
-                   Text('Starring: Rajkumar Rao,Jyothika,Alaya ',style: TextStyle(fontSize: 12,color: Colors.white),textAlign:TextAlign.start,),
-                Text('Diretor: Tushar Hiranadani',style: TextStyle(fontSize: 12,color: Colors.white),),
+                   Text('Starring: Rajkumar Rao,Jyothika,Alaya ',style:myfont12(),textAlign:TextAlign.start,),
+                Text('Diretor: Tushar Hiranadani',style: myfont12(),),
                SizedBox(height: 20,),
                 Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                   Column(children: [
-                    Icon(Icons.add,size: 25,color: Colors.white,),
-                    Text('My List',style: TextStyle(fontSize: 15,color: Colors.white),)
+                    Icon(Icons.add,size: 25,),
+                    Text('My List',style: myfont16(),)
                   ],),
                   Column(children: [
-                    Icon(Icons.thumb_up_outlined,size: 25,color: Colors.white,),
-                    Text('Rate',style: TextStyle(fontSize: 15,color: Colors.white),)
+                    Icon(Icons.thumb_up_outlined,size: 25),
+                    Text('Rate',style: myfont16())
                   ],),
                   Column(children: [
-                    Icon(Icons.share,size: 25,color: Colors.white,),
-                    Text('Share',style: TextStyle(fontSize: 15,color: Colors.white),)
+                    Icon(Icons.share,size: 25,),
+                    Text('Share',style: myfont16())
                   ],),
                 ],)
            

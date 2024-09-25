@@ -6,15 +6,14 @@ class DetailPage extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Color(0xff505352),
+      appBar: AppBar(
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20.0),
-            child: Icon(Icons.dangerous,size: 40,color: Colors.white,),
+            child: Icon(Icons.dangerous,size: 40,),
           )
         ],
       ),
-      backgroundColor: Color(0xff505352),
       body:
         ListView.builder(itemCount: Movies.mdata.length,
                                itemBuilder: (context, index)

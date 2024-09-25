@@ -21,7 +21,6 @@ class _NetflixBottomPageState extends State<NetflixBottomPage>
   List<Widget>pages=
   [
     HomePage(),
-    DetailPage(),
     MoviesPage(),
     NewhotPage(),
     MynetflixPage()
@@ -32,16 +31,16 @@ class _NetflixBottomPageState extends State<NetflixBottomPage>
   Widget build(BuildContext context)
   {
     isDark=Theme.of(context).brightness==Brightness.dark;
-    return Scaffold(backgroundColor: Color(0xff505352),
+    return Scaffold(
       body: pages[SelectedIndex],
       bottomNavigationBar: NavigationBar(destinations: [
         NavigationDestination(icon: Icon(Icons.home,size: 30,), label: "Home"),
         NavigationDestination(icon: Icon(Icons.games,size: 30,), label: 'Games'),
         NavigationDestination(icon: Icon(Icons.playlist_play,size: 30,), label: "New&Hot"),
-        NavigationDestination(icon: Icon(Icons.emoji_emotions_sharp,size: 30,), label: "Home"),
-        NavigationDestination(icon: Icon(Icons.home,size: 30,), label: "Home"),
+        NavigationDestination(icon: Icon(Icons.emoji_emotions_sharp,size: 30,), label: "Profile"),
+
       ],
-          backgroundColor: isDark?Colors.white:Colors.black,
+
            onDestinationSelected: (value){
           SelectedIndex = value;
           setState(() {
