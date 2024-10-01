@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget
   return Scaffold(
     appBar: AppBar(
 
-      leading: Image.asset('assets/icon/logo.png',height: 70,),
+      leading: Image.asset('assets/icon/logo.png',height: 50,),
       actions: [
         Row(
           children: [
@@ -40,16 +40,16 @@ class HomePage extends StatelessWidget
                  Row(
                    children: [
                    Container(height: 40,width: 100,
-                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),border: Border.all(width: 1,)),
-                       child: TextButton(onPressed: (){}, child: Text('TV Shows',style: myfont16(),))),
+                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),border: Border.all(width: 1,color: isDark?Colors.white:Colors.black)),
+                       child: TextButton(onPressed: (){}, child: Text('TV Shows',style: myfont16(mColor:isDark?Colors.white:Colors.black),))),
                    SizedBox(width: 10,),
                    Container(height: 40,width: 100,
-                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),border: Border.all(width: 1)),
-                       child: TextButton(onPressed: (){}, child: Text('Movies',style: myfont16(),))),
+                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),border: Border.all(width: 1,color: isDark?Colors.white:Colors.black)),
+                       child: TextButton(onPressed: (){}, child: Text('Movies',style: myfont16(mColor: isDark?Colors.white:Colors.black),))),
                    SizedBox(width: 10,),
                    Container(height: 40,width: 150,
-                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),border: Border.all(width: 1)),
-                       child: TextButton(onPressed: (){}, child: Text('Categories',style: myfont16(),))),
+                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),border: Border.all(width: 1,color: isDark?Colors.white:Colors.black)),
+                       child: TextButton(onPressed: (){}, child: Text('Categories',style: myfont16(mColor: isDark?Colors.white:Colors.black),))),
                  ],),
                  SizedBox(height: 20,),
                  Stack(//alignment: Alignment.bottomCenter,

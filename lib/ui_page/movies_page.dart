@@ -3,10 +3,12 @@ import 'package:netflix/ui_helper/app_constaint.dart';
 
 class MoviesPage extends StatelessWidget
 {
+  bool isDark=false;
   @override
-  Widget build(BuildContext context) {
-       return Scaffold
-         (
+  Widget build(BuildContext context)
+  {
+      isDark = Theme.of(context).brightness==Brightness.dark;
+       return Scaffold(
            appBar: AppBar(
              leading: Icon(Icons.arrow_back,size: 40,),
              actions: [
@@ -32,11 +34,11 @@ class MoviesPage extends StatelessWidget
                      Row(children: [Text('Srikanth',style: myfont25(),)],),
                      Row(
                        children: [
-                         Text('2024',style: myfont16(),),
+                         Text('2024',style: myfont16(mColor: isDark?Colors.white:Colors.black),),
                          SizedBox(width: 15,),
-                         Text('U/A 7+',style: myfont16(),),
+                         Text('U/A 7+',style: myfont16(mColor: isDark?Colors.white:Colors.black),),
                          SizedBox(width: 15,),
-                         Text('2h 14m',style: myfont16(),),
+                         Text('2h 14m',style: myfont16(mColor: isDark?Colors.white:Colors.black),),
                          SizedBox(width: 15,),
                          Icon(Icons.hd_outlined,size: 30,),
                        ],
@@ -51,12 +53,12 @@ class MoviesPage extends StatelessWidget
                        child:
                        Column(
                          children: [
-                           Text('Top',style: myfont16(),),
-                           Text('10',style: myfont16(),),
+                           Text('Top',style: myfont16(mColor: isDark?Colors.white:Colors.black),),
+                           Text('10',style: myfont16(mColor: isDark?Colors.white:Colors.black),),
                          ],
                        ),),
                      SizedBox(width: 20,),
-                     Text('# 3 in Movies Today',style: myfont16(),)
+                     Text('# 3 in Movies Today',style: myfont16(mColor: isDark?Colors.white:Colors.black),)
                    ],),
                    SizedBox(height: 10,),
                    Container(height: 40,width: double.infinity,
@@ -90,15 +92,15 @@ class MoviesPage extends StatelessWidget
                   children: [
                   Column(children: [
                     Icon(Icons.add,size: 25,),
-                    Text('My List',style: myfont16(),)
+                    Text('My List',style: myfont16(mColor: isDark?Colors.white:Colors.black),)
                   ],),
                   Column(children: [
                     Icon(Icons.thumb_up_outlined,size: 25),
-                    Text('Rate',style: myfont16())
+                    Text('Rate',style: myfont16(mColor: isDark?Colors.white:Colors.black))
                   ],),
                   Column(children: [
                     Icon(Icons.share,size: 25,),
-                    Text('Share',style: myfont16())
+                    Text('Share',style: myfont16(mColor: isDark?Colors.white:Colors.black))
                   ],),
                 ],)
            

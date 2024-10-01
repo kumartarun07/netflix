@@ -12,9 +12,9 @@ TextStyle myfont20()
   return TextStyle(fontWeight: FontWeight.bold,fontSize: 20);
 }
 
-TextStyle myfont16()
+TextStyle myfont16({Color mColor = Colors.white})
 {
-  return TextStyle(fontSize: 16,fontWeight: FontWeight.bold,);
+  return TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: mColor);
 }
 
 TextStyle myfont12()

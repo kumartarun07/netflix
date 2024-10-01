@@ -3,8 +3,11 @@ import 'package:netflix/ui_helper/app_constaint.dart';
 
 class NewhotPage extends StatelessWidget
 {
+  bool isDark =false;
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
+    isDark = Theme.of(context).brightness==Brightness.dark;
    return Scaffold(
      appBar: AppBar(
 
@@ -84,14 +87,14 @@ class NewhotPage extends StatelessWidget
                        Column(
                          children: [
                            Icon(Icons.notifications,size: 40,),
-                         Text('Remaind Me',style: myfont16(),),
+                         Text('Remind Me',style: myfont16(mColor: isDark?Colors.white:Colors.black),),
                          ],
                        ),
                      SizedBox(width: 30,),
                        Column(
                          children: [
                            Icon(Icons.info,size: 40,),
-                        Text('info',style: myfont20(),)
+                        Text('info',style: myfont16(mColor: isDark?Colors.white:Colors.black),)
                          ],
                        ),
                      ],)
@@ -101,19 +104,19 @@ class NewhotPage extends StatelessWidget
                  margin: EdgeInsets.only(left: 50),
                  child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                    children: [
-                   Text('Comming On 9 August',style: myfont20(),),
+                   Text('Coming On 9 August',style: myfont20(),),
                    Text('While evading the cops in Agra, Rani and Rishu scheme to run away together.'
                        'But when their plan go awry, Rani asks a mild-mannered admire for help. ',style: myfont12(),),
                      SizedBox(height: 30,),
                      Row(
                        children: [
-                       Text('suspenceful',style: myfont12(),),
+                       Text('suspenseful',style: myfont12(),),
                        Icon(Icons.circle,size: 10,),
                        Text('Romantic',style: myfont12(),),
                          Icon(Icons.circle,size: 10,),
-                       Text('Thirller',style: myfont12()),
+                       Text('Thriller',style: myfont12()),
                          Icon(Icons.circle,size: 10,),
-                       Text('Love&obsesion',style: myfont12()),
+                       Text('Love & obsession',style: myfont12()),
                      ],)
                  ],),
                  ),
@@ -149,14 +152,14 @@ class NewhotPage extends StatelessWidget
                          Column(
                            children: [
                              Icon(Icons.notifications,size: 40,),
-                             Text('Remind Me',style: myfont16(),),
+                             Text('Remind Me',style: myfont16(mColor: isDark?Colors.white:Colors.black),),
                            ],
                          ),
                          SizedBox(width: 30,),
                          Column(
                            children: [
                              Icon(Icons.info,size: 40,),
-                             Text('info',style: myfont20(),)
+                             Text('info',style: myfont16(mColor: isDark?Colors.white:Colors.black),)
                            ],
                          ),
                        ],)
